@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2024/10/24 23:06:14 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/24 23:47:43 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	t_node	*svgrd;
+	size_t			i;
+	unsigned char	*cv2;
 
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
+	i = 0;
+	cv2 = (unsigned char *)s;
+	while (i != n)
+	{
+		cv2[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
+// int main(void)
+// {
+// 	char test[50] = "BANKAI KATEN KYÔKOTSU KARAMATSU SHINJU";
 
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
-}
+// 	ft_memset(test, 'B', 20);
+// 	printf("%s\n", test);
+// }

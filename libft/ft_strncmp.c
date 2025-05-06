@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2024/11/06 23:58:22 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/26 01:39:48 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_node	*svgrd;
+	size_t	i;
 
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
+	i = 0;
+	while (i < n)
+	{
+		if (s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
+	}
+	return (0);
 }
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
-}
+// int main(void)
+// {
+// 	printf("%d\n", ft_strncmp("salut", "salzt", 3));
+// }

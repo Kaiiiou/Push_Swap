@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   f_utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2025/05/06 14:45:27 by amarti            #+#    #+#             */
+/*   Updated: 2025/05/06 16:18:03 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+long	ft_atol(const char *str)
 {
-	t_node	*svgrd;
+	int		i;
+	int		nega;
+	long	result;
 
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
-}
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
+	i = 0;
+	nega = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if(str[i] == '-')
+			nega = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return (result * nega);
 }

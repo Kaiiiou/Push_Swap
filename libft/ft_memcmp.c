@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2024/11/07 06:43:08 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/24 22:38:18 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_node	*svgrd;
+	unsigned char	*s1v2;
+	unsigned char	*s2v2;
+	size_t			i;
 
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
+	s1v2 = (unsigned char *)s1;
+	s2v2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (s1v2[i] != s2v2[i])
+			return ((unsigned char) s1v2[i] - (unsigned char) s2v2[i]);
+		i++;
+	}
+	return (0);
 }
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
-}
+// int main(void)
+// {
+// 	printf("%d\n", ft_memcmp("BANKBI", "BANKAI", 4));
+// }

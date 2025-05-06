@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2024/10/27 19:39:14 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/25 19:33:09 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	pa(t_node **stack_a, t_node **stack_b)
+#include "libft.h"
+// remplace la memoire pas \0 x n
+void	ft_bzero(void *s, size_t n)
 {
-	t_node	*svgrd;
-
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
+	ft_memset(s, '\0', n);
 }
+// int main(void)
+// {
+// 	char test[100] = "KonjikiAshisogiJizō";
 
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
-}
+// 	ft_bzero(test, 10);
+// 	printf("%s\n", test);
+// }

@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/05 13:20:55 by amarti           ###   ########.fr       */
+/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/24 22:29:43 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
+void	*ft_memchr(const void *s, int c, size_t n)
+	{
+	unsigned char	*sv2;
+	unsigned char	cv2;
+	size_t			i;
 
-	if (*stack_b == NULL)
-		return ;
-	svgrd = *stack_b;
-	*stack_b = (*stack_b)->next;
-	svgrd->next = *stack_a;
-	*stack_a = svgrd;
+	sv2 = (unsigned char *) s;
+	cv2 = (unsigned char) c;
+	i = 0;
+	while (i < n)
+	{
+		if (sv2[i] == cv2)
+			return ((void *) &sv2[i]);
+		i++;
+	}
+	return (NULL);
 }
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	t_node	*svgrd;
-
-	if (*stack_a == NULL)
-		return ;
-	svgrd = *stack_a;
-	*stack_a = (*stack_a)->next;
-	svgrd->next = *stack_b;
-	*stack_b = svgrd;
-}
+// int main(void)
+// {
+// 	printf("%p\n", ft_memchr("BANKAI", 'Z', 9));
+// }
