@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/07 16:33:41 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/12 13:02:29 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdbool.h>
-//# include "libft.h"
+# include "libft.h"
 
 typedef struct s_node
 {

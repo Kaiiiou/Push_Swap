@@ -6,7 +6,7 @@
 #    By: amarti <amarti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 07:58:30 by amarti            #+#    #+#              #
-#    Updated: 2025/05/07 16:31:16 by amarti           ###   ########.fr        #
+#    Updated: 2025/05/12 13:15:21 by amarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ CLONE	=	git clone
 libft_url = git@github.com:Kaiiiou/42-libft.git
 
 # === LIBFT ===
-libft		=	libft
+libft		= libft
 LIBFT	=	$(libft)/libft.a
 
 # === INCLUDES ===
-INCLUDES = -I includes -I $(libft)
+INCLUDES = -I includes -I libft
 
 # === SOURCES ===
 SRC		=	main.c \
@@ -57,10 +57,11 @@ $(libft):
 
 clean:
 	$(RM) $(OBJ)
-	$(RM) -r $(libft)
+	$(MAKE) clean -C $(libft)
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) -rf $(libft)
 
 re: fclean all
 

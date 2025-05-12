@@ -6,11 +6,20 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:49:46 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/07 15:51:32 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/12 13:17:02 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 int	main(int argc, char **argv)
 {
-	
+	(void) argc;
+	(void) argv;
+
+	while (argc-- > 1)
+	{
+		write(1, "test", 4);
+		printf("%s\n", argv[argc]);
+	}
 }

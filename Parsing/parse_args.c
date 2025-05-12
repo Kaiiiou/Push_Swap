@@ -6,9 +6,15 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 13:00:16 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/07 13:00:42 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/12 13:46:24 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	parse_args(t_node **stack_a, int argc, char **argv)
+{
+	
+}
+
+!< a !(char)
