@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/12 13:02:29 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/14 17:13:30 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	add_node_back(t_node **head, t_node *node);
 // UTILITAIRES
 
 long	ft_atol(const char *str);
+int	error_msg(char *msg);
 
 
 // INSTRUCTIONS
@@ -57,8 +58,8 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 
 bool	is_number(const char *str);
 bool	is_dupe(t_node *stack_a, int n);
-bool	is_limits(int ac, char **argv);
-
+bool	is_limits(char *argv);
+int	parse_args(t_node **stack_a, int argc, char **argv);
 
 
 #endif

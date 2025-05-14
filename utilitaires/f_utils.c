@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:45:27 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/12 12:59:38 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/14 17:06:24 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,15 @@ long	ft_atol(const char *str)
 	return (result * nega);
 }
 
+int	error_msg(char *msg)
+{
+	int	i;
+
+	i = 0;
+	while(msg[i])
+	{
+		write(2, &msg[i], 1);
+		i++;
+	}
+	return (0);
+}

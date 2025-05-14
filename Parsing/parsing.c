@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:59:21 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/06 16:28:07 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/14 17:12:59 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,12 @@ bool	is_dupe(t_node *stack_a, int n)
 	return (false);
 }
 
-bool	is_limits(int ac, char **argv)
+bool	is_limits(char *arg)
 {
-	int		i;
 	long	nb;
-
-	i = 1;
-	while (i < ac)
-	{
-		nb = ft_atol(argv[i]);
-		if(nb < -2147483648 || nb > 2147483647)
-			return (false);
-		i++;
-	}
+	nb = ft_atol(arg);
+	if (nb < -2147483648 || nb > 2147483647)
+		return (false);
 	return (true);
+
 }

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_args.c                                       :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 13:00:16 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/14 17:08:50 by amarti           ###   ########.fr       */
+/*   Created: 2025/05/14 18:49:10 by amarti            #+#    #+#             */
+/*   Updated: 2025/05/14 20:23:59 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_args(t_node **stack_a, int argc, char **argv)
+void	sort_three(t_node **a)
 {
-	int		i;
-	long	n;
+	int	first;
+	int	second;
+	int	third;
 
-	i = 1;
-	while(i < argc)
-	{
-		if(!is_number(argv[i]) || !is_limits(argv[i]))
-			return(error_msg("Error\n"));
-		n = ft_atol(argv[i]);
-		if(is_dupe(*stack_a, (int)n))
-			return(error_msg("Error\n"));
-		add_node_back(stack_a, (int)n);
-		i++;
-	}
-	return (1);
+	first = (*a)->value;
+	second = (*a)->next->value;
+	third = (*a)->next->next->value;
+	if()
 }
