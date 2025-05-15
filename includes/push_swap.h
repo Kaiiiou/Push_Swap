@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/14 17:13:30 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/15 20:15:13 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,15 @@ void	print_list(t_node *head);
 int		list_size(t_node *head);
 int		get_last_value(t_node *head);
 void	add_node_back(t_node **head, t_node *node);
+int		get_min(t_node *stack);
+int		get_index(t_node *stack, int value);
+void	bring_min_top(t_node **stack);
+
 
 // UTILITAIRES
 
 long	ft_atol(const char *str);
-int	error_msg(char *msg);
+int		error_msg(char *msg);
 
 
 // INSTRUCTIONS
@@ -59,7 +63,13 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 bool	is_number(const char *str);
 bool	is_dupe(t_node *stack_a, int n);
 bool	is_limits(char *argv);
-int	parse_args(t_node **stack_a, int argc, char **argv);
+int		parse_args(t_node **stack_a, int argc, char **argv);
+
+// SORTING
+
+void	sort_three(t_node **a);
+void	sort_four(t_node **a, t_node **b);
+
 
 
 #endif
