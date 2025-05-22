@@ -6,7 +6,7 @@
 #    By: amarti <amarti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 07:58:30 by amarti            #+#    #+#              #
-#    Updated: 2025/05/12 13:15:21 by amarti           ###   ########.fr        #
+#    Updated: 2025/05/22 16:11:01 by amarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC		=	main.c \
 			utilitaires/f_utils.c \
 			utilitaires/f_utils1.c \
 			utilitaires/f_utils2.c \
+			sorting/small_sort.c \
 
 OBJ		=	$(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/15 20:15:13 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/22 20:19:19 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	bring_min_top(t_node **stack);
 
 long	ft_atol(const char *str);
 int		error_msg(char *msg);
-
+bool	is_sorted(t_node *stack);
+t_node	*create_node(int value);
 
 // INSTRUCTIONS
 
@@ -68,8 +69,7 @@ int		parse_args(t_node **stack_a, int argc, char **argv);
 // SORTING
 
 void	sort_three(t_node **a);
-void	sort_four(t_node **a, t_node **b);
-
+void	sort_five(t_node **a, t_node **b);
 
 
 #endif

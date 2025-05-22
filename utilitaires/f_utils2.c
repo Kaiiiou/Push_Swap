@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:36:50 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/15 20:09:34 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/22 15:28:30 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,27 @@ void	bring_min_top(t_node **stack)
 		while ((*stack)->value != min)
 			rra(stack);
 	}
+}
+
+bool	is_sorted(t_node *stack)
+{
+	while (stack && stack->next)
+	{
+		if(stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
+
+t_node	*create_node(int value)
+{
+	t_node	*new_node;
+
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
+		return (NULL);
+	new_node->value = value;
+	new_node->next = NULL;
+	return (new_node);
 }

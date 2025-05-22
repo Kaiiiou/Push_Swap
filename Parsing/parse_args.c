@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 13:00:16 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/14 17:08:50 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/22 21:18:45 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,28 @@ int	parse_args(t_node **stack_a, int argc, char **argv)
 {
 	int		i;
 	long	n;
-
+	t_node	*new_node;
+	char **array_arg;
+	
 	i = 1;
-	while(i < argc)
+	if (argc > 2)
+		array_arg = argv;
+	if (argc == 2)
 	{
-		if(!is_number(argv[i]) || !is_limits(argv[i]))
+		i = 0;
+		array_arg = ft_split(argv[1], ' ');
+	}
+	while(array_arg[i])
+	{
+		if(!is_number(array_arg[i]) || !is_limits(array_arg[i]))
 			return(error_msg("Error\n"));
-		n = ft_atol(argv[i]);
+		n = ft_atol(array_arg[i]);
 		if(is_dupe(*stack_a, (int)n))
 			return(error_msg("Error\n"));
-		add_node_back(stack_a, (int)n);
+		new_node = create_node((int)n);
+		if (!new_node)
+			return (error_msg("Error\n"));
+		add_node_back(stack_a, new_node);
 		i++;
 	}
 	return (1);
