@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:49:10 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/22 20:38:15 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/26 21:08:53 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void	sort_five(t_node **a, t_node **b)
 	bring_min_top (a);
 	pb (a, b);
 	sort_three (a);
-	pa(b, a);
-	pa(b, a);
+	pa(a, b);
+	pa(a, b);
 }

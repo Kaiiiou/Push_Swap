@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/22 20:19:19 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/26 16:48:11 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdbool.h>
+#include <stdlib.h>
 # include "libft.h"
 
 typedef struct s_node
@@ -44,6 +45,7 @@ long	ft_atol(const char *str);
 int		error_msg(char *msg);
 bool	is_sorted(t_node *stack);
 t_node	*create_node(int value);
+void free_array(char **array);
 
 // INSTRUCTIONS
 

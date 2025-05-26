@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:45:27 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/14 17:06:24 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/26 22:02:49 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,20 @@ int	error_msg(char *msg)
 	}
 	return (0);
 }
+
+void	free_array(char **array)
+{
+	int i;
+
+	i = 0;
+	if(!array)
+		return;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free (array);
+}
+
+void	free_list(t_node a);
