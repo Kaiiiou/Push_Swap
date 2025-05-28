@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:59:21 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 03:19:50 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/28 22:15:02 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 bool	is_number(const char *str)
 {
-	if (*str == '\0')
+	int	i;
+
+	i = 0;
+	if (str[i] == '\0')
 		return (false);
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str)
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (!ft_isdigit(*str))
+		if(!ft_isdigit(str[i++]))
 			return (false);
-		str++;
+		i++;
+	}
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (false);
+		i++;
 	}
 	return (true);
 }
@@ -48,11 +55,26 @@ bool	is_limits(char *arg)
 
 }
 
+bool	is_len(char *str)
+{
+	size_t	i;
+	size_t	start;
+
+	i = 0;
+	while (str[i] == '-' || str[i] == '0' || str[i] == '+')
+		i++;
+	start = i;
+	while (ft_isdigit(str[i]))
+			i++;
+	if ((i -= start) > ft_strlen("9223372036854775807"))
+		return (false);
+	return (true);
+}
+
 int	add_valid_args(char **array_arg, t_node **stack_a)
 {
 	t_node	*new_node;
-// TODO parse TAILLE
-		if(!is_number(*array_arg) || !is_limits(*array_arg))
+		if(!is_number(*array_arg) || !is_limits(*array_arg) || !is_len(*array_arg))
 			return(0);
 		if(is_dupe(*stack_a, ft_atol(*array_arg)))
 			return(0);

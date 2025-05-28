@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 00:42:01 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/28 20:58:55 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ bool	is_dupe(t_node *stack_a, long n);
 bool	is_limits(char *argv);
 int		parse_args(t_node **stack_a, int argc, char **argv);
 int	add_valid_args(char **array_arg, t_node **stack_a);
+bool	is_len(char *str);
+
 
 // SORTING
 
