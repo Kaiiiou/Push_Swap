@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:36:50 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/22 15:28:30 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/27 22:48:05 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ bool	is_sorted(t_node *stack)
 	return (true);
 }
 
-t_node	*create_node(int value)
+t_node	*create_node(long value)
 {
 	t_node	*new_node;
 

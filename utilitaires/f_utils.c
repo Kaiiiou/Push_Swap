@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:45:27 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/26 22:02:49 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/28 02:19:44 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ long	ft_atol(const char *str)
 	return (result * nega);
 }
 
-int	error_msg(char *msg)
+int	error_msg(char *msg, char **error)
 {
 	int	i;
 
 	i = 0;
+	if (error)
+		free_array(error);
 	while(msg[i])
 	{
 		write(2, &msg[i], 1);
@@ -57,7 +59,7 @@ void	free_array(char **array)
 	i = 0;
 	if(!array)
 		return;
-	while (array[i])
+	while (array[i] != 0)
 	{
 		free(array[i]);
 		i++;
@@ -65,4 +67,14 @@ void	free_array(char **array)
 	free (array);
 }
 
-void	free_list(t_node a);
+void	free_list(t_node **a)
+{
+	t_node	*temp = NULL;
+
+	while (*a != NULL)
+	{
+		temp = (*a)->next;
+		free(*a);
+		*a = temp;
+	}
+}

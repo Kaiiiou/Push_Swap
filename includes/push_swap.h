@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/26 16:48:11 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/28 00:42:01 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,15 @@ void	add_node_back(t_node **head, t_node *node);
 int		get_min(t_node *stack);
 int		get_index(t_node *stack, int value);
 void	bring_min_top(t_node **stack);
+void	free_list(t_node **a);
 
 
 // UTILITAIRES
 
 long	ft_atol(const char *str);
-int		error_msg(char *msg);
+int		error_msg(char *msg, char **error);
 bool	is_sorted(t_node *stack);
-t_node	*create_node(int value);
+t_node	*create_node(long value);
 void free_array(char **array);
 
 // INSTRUCTIONS
@@ -64,9 +65,10 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 // PARSING
 
 bool	is_number(const char *str);
-bool	is_dupe(t_node *stack_a, int n);
+bool	is_dupe(t_node *stack_a, long n);
 bool	is_limits(char *argv);
 int		parse_args(t_node **stack_a, int argc, char **argv);
+int	add_valid_args(char **array_arg, t_node **stack_a);
 
 // SORTING
 

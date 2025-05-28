@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:49:46 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/26 21:38:32 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/28 03:17:13 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ int	main(int argc, char **argv)
 {
 	t_node *a = NULL;
 	t_node *b = NULL;
-	t_node	*temp = NULL;
 
 	if (argc < 2)
-		return (error_msg("Error\n"));
+		return (error_msg("Error\n", NULL));
 	if (!parse_args(&a, argc, argv))
 		return (0);
 	
@@ -31,11 +30,6 @@ int	main(int argc, char **argv)
 		sort_five (&a, &b);
 	
 	print_list (a);
-	while (a != NULL)
-	{
-		temp = a->next;
-		free(a);
-		a = temp;
-	}
+	free_list(&a);
 	return (0);
 }
