@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 13:00:16 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 19:48:41 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 10:23:28 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	parse_args(t_node **stack_a, int argc, char **argv)
 	if (argc == 2)
 		array_arg = ft_split(argv[1], ' ');
 	if (!array_arg || !array_arg[0])
-		return(error_msg("Error\n", array_arg));
-	while(array_arg[++i])
+		return (error_msg("Error\n", array_arg));
+	while (array_arg[++i])
 	{
 		if (!add_valid_args(&array_arg[i], stack_a))
 		{

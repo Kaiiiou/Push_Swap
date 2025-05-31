@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 20:58:55 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 10:25:07 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdbool.h>
-#include <stdlib.h>
+# include <stdlib.h>
 # include "libft.h"
 
 typedef struct s_node
@@ -39,14 +39,13 @@ int		get_index(t_node *stack, int value);
 void	bring_min_top(t_node **stack);
 void	free_list(t_node **a);
 
-
 // UTILITAIRES
 
 long	ft_atol(const char *str);
 int		error_msg(char *msg, char **error);
 bool	is_sorted(t_node *stack);
 t_node	*create_node(long value);
-void free_array(char **array);
+void	free_array(char **array);
 
 // INSTRUCTIONS
 
@@ -68,14 +67,18 @@ bool	is_number(const char *str);
 bool	is_dupe(t_node *stack_a, long n);
 bool	is_limits(char *argv);
 int		parse_args(t_node **stack_a, int argc, char **argv);
-int	add_valid_args(char **array_arg, t_node **stack_a);
+int		add_valid_args(char **array_arg, t_node **stack_a);
 bool	is_len(char *str);
-
 
 // SORTING
 
 void	sort_three(t_node **a);
 void	sort_five(t_node **a, t_node **b);
-
+void	chunk_sort(t_node **a, t_node **b);
+int		get_max(t_node *stack);
+void	bring_max_top(t_node **stack);
+void	convert_to_ranks(t_node *stack);
+void	save_values(t_node *stack, int *values);
+void	push_chunk_to_b(t_node **a, t_node **b, int chunk_min, int chunk_max);
 
 #endif

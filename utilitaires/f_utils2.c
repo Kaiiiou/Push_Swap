@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:36:50 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/27 22:48:05 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 10:16:04 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	get_min(t_node *stack)
 {
 	int	min;
 
-	if(!stack)
+	if (!stack)
 		return (0);
 	min = stack->value;
 	while (stack)
@@ -33,7 +33,7 @@ int	get_index(t_node *stack, int value)
 	int	i;
 
 	i = 0;
-	while(stack)
+	while (stack)
 	{
 		if (stack->value == value)
 			return (i);
@@ -49,21 +49,20 @@ void	bring_min_top(t_node **stack)
 	int	index;
 	int	size;
 
-	min = get_min(*stack);
-	index = get_index(*stack, min);
-	size = list_size(*stack);
-	
+	min = get_min (*stack);
+	index = get_index (*stack, min);
+	size = list_size (*stack);
 	if (!stack || !*stack)
-		return;
+		return ;
 	if (index <= size / 2)
 	{
-		while((*stack)->value != min)
-			ra(stack);
+		while ((*stack)->value != min)
+			ra (stack);
 	}
 	else
 	{
 		while ((*stack)->value != min)
-			rra(stack);
+			rra (stack);
 	}
 }
 
@@ -71,7 +70,7 @@ bool	is_sorted(t_node *stack)
 {
 	while (stack && stack->next)
 	{
-		if(stack->value > stack->next->value)
+		if (stack->value > stack->next->value)
 			return (false);
 		stack = stack->next;
 	}
@@ -82,7 +81,7 @@ t_node	*create_node(long value)
 {
 	t_node	*new_node;
 
-	new_node = malloc(sizeof(t_node));
+	new_node = malloc (sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;

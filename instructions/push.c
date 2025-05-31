@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:03:33 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/07 16:29:28 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:58:41 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	*stack_b = (*stack_b)->next;
 	svgrd->next = *stack_a;
 	*stack_a = svgrd;
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
@@ -34,4 +35,5 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	*stack_a = (*stack_a)->next;
 	svgrd->next = *stack_b;
 	*stack_b = svgrd;
+	write(1, "pb\n", 3);
 }

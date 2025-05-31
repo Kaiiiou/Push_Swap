@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:45:27 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 19:44:25 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 11:01:32 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long	ft_atol(const char *str)
 		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			nega = -1;
 		i++;
 	}
@@ -43,10 +43,10 @@ int	error_msg(char *msg, char **error)
 
 	i = 0;
 	if (error)
-		free_array(error);
-	while(msg[i])
+		free_array (error);
+	while (msg[i])
 	{
-		write(2, &msg[i], 1);
+		write (2, &msg[i], 1);
 		i++;
 	}
 	return (0);
@@ -54,14 +54,14 @@ int	error_msg(char *msg, char **error)
 
 void	free_array(char **array)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if(!array)
-		return;
+	if (!array)
+		return ;
 	while (array[i] != 0)
 	{
-		free(array[i]);
+		free (array[i]);
 		i++;
 	}
 	free (array);
@@ -69,12 +69,13 @@ void	free_array(char **array)
 
 void	free_list(t_node **a)
 {
-	t_node	*temp = NULL;
+	t_node	*temp;
 
+	temp = NULL;
 	while (*a != NULL)
 	{
 		temp = (*a)->next;
-		free(*a);
+		free (*a);
 		*a = temp;
 	}
 }

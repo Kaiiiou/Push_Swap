@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:59:21 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/28 22:15:02 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 11:30:54 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	is_number(const char *str)
 		return (false);
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if(!ft_isdigit(str[i++]))
+		if (!ft_isdigit(str[i + 1]))
 			return (false);
 		i++;
 	}
@@ -36,10 +36,10 @@ bool	is_number(const char *str)
 
 bool	is_dupe(t_node *stack_a, long n)
 {
-	while(stack_a)
+	while (stack_a)
 	{
-		if(stack_a->value == n)
-			return(true);
+		if (stack_a->value == n)
+			return (true);
 		stack_a = stack_a->next;
 	}
 	return (false);
@@ -48,11 +48,11 @@ bool	is_dupe(t_node *stack_a, long n)
 bool	is_limits(char *arg)
 {
 	long	nb;
-	nb = ft_atol(arg);
+
+	nb = ft_atol (arg);
 	if (nb < -2147483648 || nb > 2147483647)
 		return (false);
 	return (true);
-
 }
 
 bool	is_len(char *str)
@@ -65,8 +65,9 @@ bool	is_len(char *str)
 		i++;
 	start = i;
 	while (ft_isdigit(str[i]))
-			i++;
-	if ((i -= start) > ft_strlen("9223372036854775807"))
+		i++;
+	i -= start;
+	if (i > ft_strlen("9223372036854775807"))
 		return (false);
 	return (true);
 }
@@ -74,13 +75,14 @@ bool	is_len(char *str)
 int	add_valid_args(char **array_arg, t_node **stack_a)
 {
 	t_node	*new_node;
-		if(!is_number(*array_arg) || !is_limits(*array_arg) || !is_len(*array_arg))
-			return(0);
-		if(is_dupe(*stack_a, ft_atol(*array_arg)))
-			return(0);
-		new_node = create_node(ft_atol(*array_arg));
-		if (!new_node)
-			return(0);
-		add_node_back(stack_a, new_node);
+
+	if (!is_number(*array_arg) || !is_limits(*array_arg) || !is_len(*array_arg))
+		return (0);
+	if (is_dupe(*stack_a, ft_atol (*array_arg)))
+		return (0);
+	new_node = create_node (ft_atol (*array_arg));
+	if (!new_node)
+		return (0);
+	add_node_back (stack_a, new_node);
 	return (1);
 }

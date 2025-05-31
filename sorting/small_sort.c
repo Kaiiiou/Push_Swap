@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:49:10 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/26 21:08:53 by amarti           ###   ########.fr       */
+/*   Updated: 2025/05/31 10:26:31 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	sort_three(t_node **a)
 	first = (*a)->value;
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
-	if(first < second && second < third && first < third)
-		return;
+	if (first < second && second < third && first < third)
+		return ;
 	else if (first > second && second > third && third < first)
 	{
 		sa(*a);
