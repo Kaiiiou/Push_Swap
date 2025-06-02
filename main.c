@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:49:46 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/31 11:00:50 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:16:08 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc < 2)
-		return (error_msg("Error\n", NULL));
+	{
+		error_msg("Error\n", NULL);
+		return (1);
+	}
 	if (!parse_args(&a, argc, argv))
-		return (0);
+		return (1);
 	if (list_size (a) == 2 && !is_sorted (a))
 		sa (a);
 	else if (list_size (a) == 3 && !is_sorted (a))

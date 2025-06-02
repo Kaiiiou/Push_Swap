@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/31 10:25:07 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:08:25 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		list_size(t_node *head);
 int		get_last_value(t_node *head);
 void	add_node_back(t_node **head, t_node *node);
 int		get_min(t_node *stack);
+int		get_max(t_node *stack);
 int		get_index(t_node *stack, int value);
 void	bring_min_top(t_node **stack);
 void	free_list(t_node **a);
@@ -60,6 +61,8 @@ void	rr(t_node **stack_a, t_node **stack_b);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
+void	s_rra(t_node **stack_a);
+void	s_rrb(t_node **stack_b);
 
 // PARSING
 
@@ -75,10 +78,6 @@ bool	is_len(char *str);
 void	sort_three(t_node **a);
 void	sort_five(t_node **a, t_node **b);
 void	chunk_sort(t_node **a, t_node **b);
-int		get_max(t_node *stack);
 void	bring_max_top(t_node **stack);
-void	convert_to_ranks(t_node *stack);
-void	save_values(t_node *stack, int *values);
-void	push_chunk_to_b(t_node **a, t_node **b, int chunk_min, int chunk_max);
 
 #endif

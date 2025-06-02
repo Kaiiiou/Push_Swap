@@ -6,13 +6,13 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 07:18:11 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/31 11:34:43 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/02 10:18:16 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	save_values(t_node *stack, int *values)
+static void	save_values(t_node *stack, int *values)
 {
 	t_node	*current;
 	int		i;
@@ -27,7 +27,7 @@ void	save_values(t_node *stack, int *values)
 	}
 }
 
-void	push_chunk_to_b(t_node **a, t_node **b, int chunk_min, int chunk_max)
+static void	chunk_to_b(t_node **a, t_node **b, int chunk_min, int chunk_max)
 {
 	int	size;
 	int	i;
@@ -50,22 +50,13 @@ void	push_chunk_to_b(t_node **a, t_node **b, int chunk_min, int chunk_max)
 	}
 }
 
-void	convert_to_ranks(t_node *stack)
+static void	calculate_ranks(t_node *stack, int *values, int size)
 {
 	t_node	*current;
-	int		*values;
-	int		size;
 	int		i;
 	int		rank;
 	int		j;
 
-	if (!stack)
-		return ;
-	size = list_size(stack);
-	values = malloc(sizeof(int) * size);
-	if (!values)
-		return ;
-	save_values(stack, values);
 	current = stack;
 	i = 0;
 	while (current)
@@ -82,6 +73,21 @@ void	convert_to_ranks(t_node *stack)
 		current = current->next;
 		i++;
 	}
+}
+
+static void	convert_to_ranks(t_node *stack)
+{
+	int	*values;
+	int	size;
+
+	if (!stack)
+		return ;
+	size = list_size(stack);
+	values = malloc(sizeof(int) * size);
+	if (!values)
+		return ;
+	save_values(stack, values);
+	calculate_ranks(stack, values, size);
 	free(values);
 }
 
@@ -103,7 +109,7 @@ void	chunk_sort(t_node **a, t_node **b)
 	i = 0;
 	while (i < chunks && *a)
 	{
-		push_chunk_to_b(a, b, i * chunk_size, (i + 1) * chunk_size - 1);
+		chunk_to_b(a, b, i * chunk_size, (i + 1) * chunk_size - 1);
 		i++;
 	}
 	while (*b)

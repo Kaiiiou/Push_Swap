@@ -6,13 +6,13 @@
 #    By: amarti <amarti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 07:58:30 by amarti            #+#    #+#              #
-#    Updated: 2025/05/31 09:31:26 by amarti           ###   ########.fr        #
+#    Updated: 2025/06/02 09:59:58 by amarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
-CC		=	clang
+CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -g $(INCLUDES)
 RM		=	rm -f
 CLONE	=	git clone
