@@ -6,7 +6,7 @@
 #    By: amarti <amarti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 07:58:30 by amarti            #+#    #+#              #
-#    Updated: 2025/06/02 09:59:58 by amarti           ###   ########.fr        #
+#    Updated: 2025/06/03 16:35:06 by amarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS	=	-Wall -Wextra -Werror -g $(INCLUDES)
 RM		=	rm -f
 CLONE	=	git clone
 
-libft_url = git@github.com:Kaiiiou/42-libft.git
+libft_url = https://github.com/Kaiiiou/42-libft.git
 
 # === LIBFT ===
 libft		= libft
