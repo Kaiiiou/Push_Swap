@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 07:59:40 by amarti            #+#    #+#             */
-/*   Updated: 2025/06/02 10:08:25 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/05 02:52:06 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void	sort_three(t_node **a);
 void	sort_five(t_node **a, t_node **b);
 void	chunk_sort(t_node **a, t_node **b);
 void	bring_max_top(t_node **stack);
+void	sort_four(t_node **a, t_node **b);
+void	is_chunk_sort(t_node *a, t_node *b);
 
 #endif

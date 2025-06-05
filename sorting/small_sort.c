@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:49:10 by amarti            #+#    #+#             */
-/*   Updated: 2025/05/31 10:26:31 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/05 02:59:24 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ void	sort_three(t_node **a)
 		rra(a);
 }
 
+void	sort_four(t_node **a, t_node **b)
+{
+	bring_min_top (a);
+	pb (a, b);
+	sort_three (a);
+	pa(a, b);
+}
+
 void	sort_five(t_node **a, t_node **b)
 {
 	bring_min_top (a);
@@ -50,4 +58,16 @@ void	sort_five(t_node **a, t_node **b)
 	sort_three (a);
 	pa(a, b);
 	pa(a, b);
+}
+
+void	is_chunk_sort(t_node *a, t_node *b)
+{
+	if (list_size (a) == 2 && !is_sorted (a))
+		sa (a);
+	else if (list_size (a) == 3 && !is_sorted (a))
+		sort_three(&a);
+	else if (list_size (a) == 4 && !is_sorted (a))
+		sort_four(&a, &b);
+	else if (list_size (a) == 5 && !is_sorted (a))
+		sort_five (&a, &b);
 }

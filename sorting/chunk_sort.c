@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 07:18:11 by amarti            #+#    #+#             */
-/*   Updated: 2025/06/02 10:18:16 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/05 02:44:54 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	chunk_sort(t_node **a, t_node **b)
 		chunk_to_b(a, b, i * chunk_size, (i + 1) * chunk_size - 1);
 		i++;
 	}
+	is_chunk_sort(*a, *b);
 	while (*b)
 	{
 		bring_max_top(b);
