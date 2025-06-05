@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:49:46 by amarti            #+#    #+#             */
-/*   Updated: 2025/06/05 02:36:24 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/05 04:31:51 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	else if (list_size (a) == 3 && !is_sorted (a))
 		sort_three(&a);
 	else if (list_size (a) == 4 && !is_sorted (a))
-		sort_four(&a, &b); 
+		sort_four(&a, &b);
 	else if (list_size (a) == 5 && !is_sorted (a))
 		sort_five (&a, &b);
 	else if (!is_sorted(a))
